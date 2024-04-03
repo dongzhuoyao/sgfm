@@ -1,0 +1,17 @@
+name: uvit_online_patch
+img_size: 32
+patch_size: 2
+in_chans: 4
+embed_dim: 1024
+depth: 20
+num_heads: 16
+mlp_ratio: 4
+p_uncond: 0.15
+qkv_bias: false
+mlp_time_embed: false
+use_checkpoint: true
+###############
+num_classes: -1
+nmb_prototypes: ${dataset.K}
+nmb_prototypes_output_dim: 1024
+normalize: true

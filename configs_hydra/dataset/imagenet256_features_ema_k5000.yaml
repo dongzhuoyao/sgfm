@@ -1,0 +1,5 @@
+name: imagenet256_features_ema
+path: assets/datasets/imagenet256_features.h5
+cfg: False
+p_uncond: 0.15
+K: 5_000

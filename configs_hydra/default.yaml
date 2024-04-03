@@ -1,0 +1,81 @@
+defaults:
+  - dataset: imagenet100_256_features_ema_k300
+  - nnet: uvit_online
+  - sample: default
+  - _self_
+
+#### don't change 
+job_name: null
+workdir: null
+ckpt_root: null
+sample_dir: null
+##### 
+
+seed: 1234
+z_shape: [4, 32, 32]
+vis_num: 12
+is_debug: true
+pretrained_path : assets/pretrained_weights/imagenet256_uvit_large.pth
+
+
+eval_clusterseg_vis: false
+
+eval_steplist : false
+eval_scalelist : false
+vis_cfg : false
+vis_fm_chain : false
+vis_cluster_samples_online : false
+eval_cluster_vis_during_training : false
+
+
+K: 300
+ema_start_iters: 0.5
+swav_w: 1.0
+ema_t: 0.85  # 0.8, denotes slightly corrupt the data is enough
+scratch: false
+save_every_ckpt: true
+force_no_cfg: false
+
+tag: ""
+dynamic: 
+    sigma_min: 1e-4
+
+
+autoencoder : 
+  pretrained_path: assets/stable-diffusion/autoencoder_kl.pth
+
+
+train: 
+  n_steps: 300000  # 300000->1_000_000
+  batch_size: 1024
+  mode: "uncond"  # here need to be
+  log_interval: 10
+  vis_interval: 1000
+  save_interval: 50000
+
+optimizer:   # https://github.com/NVlabs/I2SB/blob/1ffdfaaf05495ef883ece2c1fe991b3049f814cc/i2sb/runner.py#L30
+  name: adamw
+  lr: 5e-5  # 2e-4 -> 5e-5
+  weight_decay: 0.00  # 0.03->0.00
+  # betas:(0.99, 0.99),#I2SB use default betas[0.9,0.999]
+
+lr_scheduler: 
+  name: customized
+  warmup_steps: 5000
+
+dl: 
+  num_workers: 8
+
+
+hydra:
+  run:
+    dir: outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S} 
+  job:
+    name: ${nnet.name}_${dataset.name}_bs${train.batch_size}
+
+
+
+
+
+
+

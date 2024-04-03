@@ -1,0 +1,8 @@
+
+sample_steps: 50
+n_samples: 10000
+mini_batch_size: 50  # the decoder is large
+algorithm: dpm_solver
+cfg: true
+scale: 0.4
+path: ""
