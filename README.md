@@ -1,6 +1,34 @@
 # Guided Diffusion from Self-Supervised Diffusion Features
 
 
+## 🎓 Citation
+
+Please cite our paper:
+
+```bibtex
+@inproceedings{sgfm,
+                 title={Guided Diffusion from Self-Supervised Diffusion Features},
+                 author={Vincent Tao Hu and  Yunlu Chen and Mathilde Caron and Yuki M Asano and Cees G. M. Snoek and Björn Ommer},
+                  year={2024},
+                  booktitle={Arxiv},
+              }
+      }
+```
+
+
+
+# Main Experiment
+
+ImageNet100, Image-level
+```bash
+CUDA_VISIBLE_DEVICES=2  accelerate launch  --num_processes 1 --main_process_port 8050  --mixed_precision fp16 train_sgfm_hydra.py nnet=uvit_online  train.batch_size=64  train.n_steps=400_000 train.log_interval=10 train.vis_interval=5_000  train.save_interval=40_000  is_debug=0 tag=_
+```
+
+ImageNet100, Patch-level
+```bash
+CUDA_VISIBLE_DEVICES=2  accelerate launch  --num_processes 1 --main_process_port 8050  --mixed_precision fp16 train_sgfm_hydra.py nnet=uvit_online_patch train.batch_size=64  train.n_steps=400_000 train.log_interval=10 train.vis_interval=5_000  train.save_interval=40_000  is_debug=0 tag=_
+```
+
 
 
 # Dataset Preparation
@@ -51,18 +79,5 @@ pip install python-dotenv #for configuring the wandb key
 faiss install 
 ```bash 
 conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
-```
-
-
-# Main Experiment
-
-ImageNet100, Image-level
-```bash
-CUDA_VISIBLE_DEVICES=2  accelerate launch  --num_processes 1 --main_process_port 8050  --mixed_precision fp16 train_sgfm_hydra.py nnet=uvit_online  train.batch_size=64  train.n_steps=400_000 train.log_interval=10 train.vis_interval=5_000  train.save_interval=40_000  is_debug=0 tag=_
-```
-
-ImageNet100, Patch-level
-```bash
-CUDA_VISIBLE_DEVICES=2  accelerate launch  --num_processes 1 --main_process_port 8050  --mixed_precision fp16 train_sgfm_hydra.py nnet=uvit_online_patch train.batch_size=64  train.n_steps=400_000 train.log_interval=10 train.vis_interval=5_000  train.save_interval=40_000  is_debug=0 tag=_
 ```
 
