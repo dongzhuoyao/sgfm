@@ -1,6 +1,32 @@
 # Guided Diffusion from Self-Supervised Diffusion Features
 
 
+<span class="author-block">
+                <a href="https://taohu.me/" target="_blank">Vincent Tao HU</a>,</span>
+                  <span class="author-block">
+                    <a href="https://yunlu-chen.github.io/" target="_blank">Yunlu Chen</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://yukimasano.github.io/" target="_blank">Yuki M. Asano</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.google.com/search?q=mathilde+caron&rlz=1C5CHFA_enDE1097DE1097&oq=Mathilde+Caron&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMgcIARAuGIAEMgcIAhAAGIAEMgcIAxAAGIAEMggIBBAAGBYYHjIICAUQABgWGB4yCAgGEAAYFhgeMgYIBxBFGD3SAQcxNjFqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8" target="_blank">Mathilde Caron</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.ceessnoek.info/" target="_blank">Cees G. M. Snoek</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://ommer-lab.com/people/ommer/" target="_blank">Bjorn Ommer</a>
+                  </span>
+                  
+
+
+[![Website](doc/badges/badge-website.svg)](https://taohu.me/project_sgfm/)
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2312.08825)
+[![GitHub](https://img.shields.io/github/stars/dongzhuoyao/sgfm?style=social)](https://github.com/dongzhuoyao/sgfm)
+[![License](https://img.shields.io/badge/License-Apache--2.0-929292)](https://www.apache.org/licenses/LICENSE-2.0)
+
+
 ## 🎓 Citation
 
 Please cite our paper:
