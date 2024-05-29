@@ -1,6 +1,7 @@
 # Guided Diffusion from Self-Supervised Diffusion Features
 
 
+
 <span class="author-block">
                 <a href="https://taohu.me/" target="_blank">Vincent Tao HU</a>,</span>
                   <span class="author-block">
@@ -16,8 +17,11 @@
                     <a href="https://www.ceessnoek.info/" target="_blank">Cees G. M. Snoek</a>,
                   </span>
                   <span class="author-block">
-                    <a href="https://ommer-lab.com/people/ommer/" target="_blank">Bjorn Ommer</a>
+                    <a href="https://ommer-lab.com/people/ommer/" target="_blank">Björn Ommer</a>
                   </span>
+
+
+
                   
 
 
